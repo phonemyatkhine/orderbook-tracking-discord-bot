@@ -12,7 +12,7 @@ class Collections(commands.Cog):
     async def new_collection(self, ctx, arg):
         conn = load_db()
         split = arg.split("@")
-        new_collection_sql = "INSERT INTO COLLECTIONS (NAME, TWITTER_LINK) VALUES (' "+split[0]+" ', ' "+split[1]+"' )"
+        new_collection_sql = "INSERT INTO COLLECTIONS (NAME, TWITTER_LINK) VALUES ('"+split[0]+"', '"+split[1]+"' )"
         try :
             conn.executeSql(new_collection_sql)
             close_db(conn)
